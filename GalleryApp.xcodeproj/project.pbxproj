@@ -146,6 +146,7 @@
 			buildConfigurationList = 18822CB32EC1E87F006C6642 /* Build configuration list for PBXNativeTarget "GalleryApp" */;
 			buildPhases = (
 				18822C862EC1E87E006C6642 /* Sources */,
+				181DA5742EC339F600435D86 /* Run Script Phase */,
 				18822C872EC1E87E006C6642 /* Frameworks */,
 				18822C882EC1E87E006C6642 /* Resources */,
 			);
@@ -275,6 +276,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		181DA5742EC339F600435D86 /* Run Script Phase */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script Phase";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"${SRCROOT}\"\necho \"SwiftLint running in $(pwd)\"\nif [[ -f /opt/homebrew/bin/swiftlint ]]; then\n  /opt/homebrew/bin/swiftlint --reporter xcode\nelse\n  echo \"warning: SwiftLint not installed\"\nfi\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		18822C862EC1E87E006C6642 /* Sources */ = {
