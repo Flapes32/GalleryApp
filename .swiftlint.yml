@@ -1,0 +1,28 @@
+opt_in_rules:
+  - force_unwrapping
+  - empty_count
+  - vertical_whitespace
+  - identifier_name
+  - line_length
+
+line_length:
+  warning: 120
+  error: 160
+
+identifier_name:
+  min_length: 2
+  max_length: 40
+  excluded:
+    - i
+    - x
+    - y
+
+included:
+  - App
+excluded:
+  - Pods
+  - Carthage
+  - Generated
+
+reporter: xcode
+
