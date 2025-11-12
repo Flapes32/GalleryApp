@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# SwiftLint pre-commit hook
+
+SWIFT_LINT=$(which swiftlint)
+
+if [[ -e "${SWIFT_LINT}" ]]; then
+    echo "SwiftLint Start..."
+
+    # Проверяем все staged .swift файлы
+    git diff --cached --name-only --diff-filter=d | grep ".swift$" | while read filename; do
+        ${SWIFT_LINT} lint "${filename}"
+    done
+
+    RESULT=$?
+
+    if [ $RESULT -eq 0 ]; then
+        echo "✅ SwiftLint Passed"
+    else
+        echo "❌ SwiftLint Failed. Fix violations before commit."
+        exit 1
+    fi
+else
+    echo "⚠️  SwiftLint not installed"
+    exit 1
+fi
+
+
+
