@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		180FDE9C2EC1ED69004CC694 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180FDE992EC1ED69004CC694 /* AppDelegate.swift */; };
-		180FDE9D2EC1ED69004CC694 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180FDE9A2EC1ED69004CC694 /* SceneDelegate.swift */; };
 		180FDE9E2EC1ED69004CC694 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180FDE9B2EC1ED69004CC694 /* ViewController.swift */; };
-		180FDEA62EC1ED9F004CC694 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 180FDEA52EC1ED9F004CC694 /* Info.plist */; };
-		180FDEA72EC1ED9F004CC694 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180FDE9F2EC1ED9F004CC694 /* Assets.xcassets */; };
-		180FDEA82EC1ED9F004CC694 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180FDEA12EC1ED9F004CC694 /* LaunchScreen.storyboard */; };
-		180FDEA92EC1ED9F004CC694 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180FDEA32EC1ED9F004CC694 /* Main.storyboard */; };
+		180FDECC2EC28D60004CC694 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180FDECA2EC28D60004CC694 /* SceneDelegate.swift */; };
+		180FDECD2EC28D60004CC694 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180FDEC92EC28D60004CC694 /* AppDelegate.swift */; };
+		180FDED12EC28D72004CC694 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180FDECE2EC28D72004CC694 /* Assets.xcassets */; };
+		180FDED52EC28D88004CC694 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180FDED32EC28D88004CC694 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,13 +32,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		180FDE992EC1ED69004CC694 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		180FDE9A2EC1ED69004CC694 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		180FDE9B2EC1ED69004CC694 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		180FDE9F2EC1ED9F004CC694 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		180FDEA02EC1ED9F004CC694 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		180FDEA22EC1ED9F004CC694 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
-		180FDEA52EC1ED9F004CC694 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		180FDEC92EC28D60004CC694 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		180FDECA2EC28D60004CC694 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		180FDECE2EC28D72004CC694 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		180FDED32EC28D88004CC694 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		18201B642EC3296E00EAEE72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18822C8A2EC1E87E006C6642 /* GalleryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GalleryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18822CA02EC1E87F006C6642 /* GalleryAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GalleryAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18822CAA2EC1E87F006C6642 /* GalleryAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GalleryAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,24 +81,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		180FDEA42EC1ED9F004CC694 /* Base.lproj */ = {
+		180FDECB2EC28D60004CC694 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				180FDEA12EC1ED9F004CC694 /* LaunchScreen.storyboard */,
-				180FDEA32EC1ED9F004CC694 /* Main.storyboard */,
+				180FDEC92EC28D60004CC694 /* AppDelegate.swift */,
+				180FDECA2EC28D60004CC694 /* SceneDelegate.swift */,
 			);
-			path = Base.lproj;
+			path = App;
+			sourceTree = "<group>";
+		};
+		180FDED02EC28D72004CC694 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				18201B642EC3296E00EAEE72 /* Info.plist */,
+				180FDECE2EC28D72004CC694 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		180FDED42EC28D88004CC694 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				180FDED32EC28D88004CC694 /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		180FDED62EC28DCF004CC694 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Packages;
 			sourceTree = "<group>";
 		};
 		18822C812EC1E87E006C6642 = {
 			isa = PBXGroup;
 			children = (
-				180FDE992EC1ED69004CC694 /* AppDelegate.swift */,
-				180FDE9A2EC1ED69004CC694 /* SceneDelegate.swift */,
+				180FDED62EC28DCF004CC694 /* Packages */,
+				180FDED42EC28D88004CC694 /* SupportingFiles */,
+				180FDED02EC28D72004CC694 /* Resources */,
+				180FDECB2EC28D60004CC694 /* App */,
 				180FDE9B2EC1ED69004CC694 /* ViewController.swift */,
-				180FDE9F2EC1ED9F004CC694 /* Assets.xcassets */,
-				180FDEA42EC1ED9F004CC694 /* Base.lproj */,
-				180FDEA52EC1ED9F004CC694 /* Info.plist */,
 				18822CA32EC1E87F006C6642 /* GalleryAppTests */,
 				18822CAD2EC1E87F006C6642 /* GalleryAppUITests */,
 				18822C8B2EC1E87E006C6642 /* Products */,
@@ -126,6 +146,7 @@
 			buildConfigurationList = 18822CB32EC1E87F006C6642 /* Build configuration list for PBXNativeTarget "GalleryApp" */;
 			buildPhases = (
 				18822C862EC1E87E006C6642 /* Sources */,
+				181DA5742EC339F600435D86 /* Run Script Phase */,
 				18822C872EC1E87E006C6642 /* Frameworks */,
 				18822C882EC1E87E006C6642 /* Resources */,
 			);
@@ -235,10 +256,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				180FDEA62EC1ED9F004CC694 /* Info.plist in Resources */,
-				180FDEA72EC1ED9F004CC694 /* Assets.xcassets in Resources */,
-				180FDEA82EC1ED9F004CC694 /* LaunchScreen.storyboard in Resources */,
-				180FDEA92EC1ED9F004CC694 /* Main.storyboard in Resources */,
+				180FDED52EC28D88004CC694 /* LaunchScreen.storyboard in Resources */,
+				180FDED12EC28D72004CC694 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,11 +277,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		181DA5742EC339F600435D86 /* Run Script Phase */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script Phase";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"${SRCROOT}\"\necho \"SwiftLint running in $(pwd)\"\nif [[ -f /opt/homebrew/bin/swiftlint ]]; then\n  /opt/homebrew/bin/swiftlint --reporter xcode\nelse\n  echo \"warning: SwiftLint not installed\"\nfi\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		18822C862EC1E87E006C6642 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				180FDECC2EC28D60004CC694 /* SceneDelegate.swift in Sources */,
+				180FDECD2EC28D60004CC694 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,8 +313,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				180FDE9C2EC1ED69004CC694 /* AppDelegate.swift in Sources */,
-				180FDE9D2EC1ED69004CC694 /* SceneDelegate.swift in Sources */,
 				180FDE9E2EC1ED69004CC694 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,25 +339,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		180FDEA12EC1ED9F004CC694 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				180FDEA02EC1ED9F004CC694 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		180FDEA32EC1ED9F004CC694 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				180FDEA22EC1ED9F004CC694 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		18822CB42EC1E87F006C6642 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -327,7 +349,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 84WHR6PH48;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GalleryApp/Info.plist;
+				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -356,7 +378,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 84WHR6PH48;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GalleryApp/Info.plist;
+				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -429,6 +451,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"INFOPLIST_FILE[sdk=*]" = "$(SRCROOT)/GalleryApp/Resources/Info.plist\n";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
