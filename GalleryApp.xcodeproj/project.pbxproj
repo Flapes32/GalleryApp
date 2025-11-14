@@ -12,6 +12,8 @@
 		180FDECD2EC28D60004CC694 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180FDEC92EC28D60004CC694 /* AppDelegate.swift */; };
 		180FDED12EC28D72004CC694 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180FDECE2EC28D72004CC694 /* Assets.xcassets */; };
 		180FDED52EC28D88004CC694 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180FDED32EC28D88004CC694 /* LaunchScreen.storyboard */; };
+		184F01E92EC7220100C48357 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 184F01E82EC7220100C48357 /* Core */; };
+		18A12F232EC5FA4E00B2EB10 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 18A12F222EC5FA4E00B2EB10 /* Models */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				184F01E92EC7220100C48357 /* Core in Frameworks */,
+				18A12F232EC5FA4E00B2EB10 /* Models in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +118,13 @@
 			path = Packages;
 			sourceTree = "<group>";
 		};
+		184F01E72EC7220100C48357 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		18822C812EC1E87E006C6642 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +135,7 @@
 				180FDE9B2EC1ED69004CC694 /* ViewController.swift */,
 				18822CA32EC1E87F006C6642 /* GalleryAppTests */,
 				18822CAD2EC1E87F006C6642 /* GalleryAppUITests */,
+				184F01E72EC7220100C48357 /* Frameworks */,
 				18822C8B2EC1E87E006C6642 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -155,6 +167,8 @@
 			);
 			name = GalleryApp;
 			packageProductDependencies = (
+				184F01E82EC7220100C48357 /* Core */,
+				18A12F222EC5FA4E00B2EB10 /* Models */,
 			);
 			productName = GalleryApp;
 			productReference = 18822C8A2EC1E87E006C6642 /* GalleryApp.app */;
@@ -244,6 +258,7 @@
 				1865B4A22EC488FE007E18CC /* XCLocalSwiftPackageReference "Packages/DetailFeature" */,
 				1865B4A32EC48908007E18CC /* XCLocalSwiftPackageReference "Packages/GalleryFeature" */,
 				1865B4A42EC48913007E18CC /* XCLocalSwiftPackageReference "Packages/Models" */,
+				1865B4A62EC48A02007E18CC /* XCLocalSwiftPackageReference "Packages/NetworkLayer" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 18822C8B2EC1E87E006C6642 /* Products */;
@@ -638,7 +653,24 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/Models;
 		};
+		1865B4A62EC48A02007E18CC /* XCLocalSwiftPackageReference "Packages/NetworkLayer" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/NetworkLayer;
+		};
 /* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		184F01E82EC7220100C48357 /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1865B4A02EC488E5007E18CC /* XCLocalSwiftPackageReference "Packages/Core" */;
+			productName = Core;
+		};
+		18A12F222EC5FA4E00B2EB10 /* Models */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1865B4A42EC48913007E18CC /* XCLocalSwiftPackageReference "Packages/Models" */;
+			productName = Models;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 18822C822EC1E87E006C6642 /* Project object */;
 }
