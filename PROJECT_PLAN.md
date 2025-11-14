@@ -17,3 +17,9 @@
 - Фаза 3: DetailFeature + навигация
 - Фаза 4: Интеграция API и хранилища
 - Фаза 5: UI/UX финализация и тесты
+
+
+App → GalleryFeature → NetworkLayer → Core
+  ↓                  → DataLayer    → Models
+  → DetailFeature   → NetworkLayer
+                   → DataLayer
