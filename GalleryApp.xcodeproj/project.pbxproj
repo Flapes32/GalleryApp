@@ -12,6 +12,9 @@
 		180FDECD2EC28D60004CC694 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180FDEC92EC28D60004CC694 /* AppDelegate.swift */; };
 		180FDED12EC28D72004CC694 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180FDECE2EC28D72004CC694 /* Assets.xcassets */; };
 		180FDED52EC28D88004CC694 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180FDED32EC28D88004CC694 /* LaunchScreen.storyboard */; };
+		184F01E92EC7220100C48357 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 184F01E82EC7220100C48357 /* Core */; };
+		18A12F232EC5FA4E00B2EB10 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 18A12F222EC5FA4E00B2EB10 /* Models */; };
+		18A12F242EC5FA4F00B2EB10 /* NetworkLayer in Frameworks */ = {isa = PBXBuildFile; productRef = 18A12F252EC5FA4F00B2EB10 /* NetworkLayer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,7 @@
 		180FDECE2EC28D72004CC694 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		180FDED32EC28D88004CC694 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18201B642EC3296E00EAEE72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18201B662EC3297000EAEE72 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		18822C8A2EC1E87E006C6642 /* GalleryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GalleryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18822CA02EC1E87F006C6642 /* GalleryAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GalleryAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18822CAA2EC1E87F006C6642 /* GalleryAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GalleryAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +65,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				184F01E92EC7220100C48357 /* Core in Frameworks */,
+				18A12F232EC5FA4E00B2EB10 /* Models in Frameworks */,
+				18A12F242EC5FA4F00B2EB10 /* NetworkLayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				18201B642EC3296E00EAEE72 /* Info.plist */,
+				18201B662EC3297000EAEE72 /* Config.xcconfig */,
 				180FDECE2EC28D72004CC694 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -114,6 +122,13 @@
 			path = Packages;
 			sourceTree = "<group>";
 		};
+		184F01E72EC7220100C48357 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		18822C812EC1E87E006C6642 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +139,7 @@
 				180FDE9B2EC1ED69004CC694 /* ViewController.swift */,
 				18822CA32EC1E87F006C6642 /* GalleryAppTests */,
 				18822CAD2EC1E87F006C6642 /* GalleryAppUITests */,
+				184F01E72EC7220100C48357 /* Frameworks */,
 				18822C8B2EC1E87E006C6642 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -155,6 +171,9 @@
 			);
 			name = GalleryApp;
 			packageProductDependencies = (
+				184F01E82EC7220100C48357 /* Core */,
+				18A12F222EC5FA4E00B2EB10 /* Models */,
+				18A12F252EC5FA4F00B2EB10 /* NetworkLayer */,
 			);
 			productName = GalleryApp;
 			productReference = 18822C8A2EC1E87E006C6642 /* GalleryApp.app */;
@@ -244,6 +263,7 @@
 				1865B4A22EC488FE007E18CC /* XCLocalSwiftPackageReference "Packages/DetailFeature" */,
 				1865B4A32EC48908007E18CC /* XCLocalSwiftPackageReference "Packages/GalleryFeature" */,
 				1865B4A42EC48913007E18CC /* XCLocalSwiftPackageReference "Packages/Models" */,
+				1865B4A62EC48A02007E18CC /* XCLocalSwiftPackageReference "Packages/NetworkLayer" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 18822C8B2EC1E87E006C6642 /* Products */;
@@ -326,6 +346,7 @@
 /* Begin XCBuildConfiguration section */
 		18822CB42EC1E87F006C6642 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18201B662EC3297000EAEE72 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -355,6 +376,7 @@
 		};
 		18822CB52EC1E87F006C6642 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18201B662EC3297000EAEE72 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -638,7 +660,29 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/Models;
 		};
+		1865B4A62EC48A02007E18CC /* XCLocalSwiftPackageReference "Packages/NetworkLayer" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/NetworkLayer;
+		};
 /* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		184F01E82EC7220100C48357 /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1865B4A02EC488E5007E18CC /* XCLocalSwiftPackageReference "Packages/Core" */;
+			productName = Core;
+		};
+		18A12F222EC5FA4E00B2EB10 /* Models */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1865B4A42EC48913007E18CC /* XCLocalSwiftPackageReference "Packages/Models" */;
+			productName = Models;
+		};
+		18A12F252EC5FA4F00B2EB10 /* NetworkLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1865B4A62EC48A02007E18CC /* XCLocalSwiftPackageReference "Packages/NetworkLayer" */;
+			productName = NetworkLayer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 18822C822EC1E87E006C6642 /* Project object */;
 }

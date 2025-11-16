@@ -30,6 +30,20 @@
 Хук находится в `.git/hooks/pre-commit` и автоматически проверяет все закоммиченные `.swift` файлы.  
 Это гарантирует единый стиль кода и чистую историю в репозитории.
 
+## Configuration
+
+### Unsplash API Setup
+
+Для работы приложения необходим API ключ от Unsplash:
+
+1. Зарегистрируйтесь на https://unsplash.com/developers
+2. Создайте приложение и получите Access Key
+3. Скопируйте `Config.xcconfig.example` в `Config.xcconfig` (в папке `Resources/`)
+4. Замените `your_access_key_here` на ваш реальный ключ
+5. Убедитесь, что `Config.xcconfig` добавлен в `.gitignore` (уже настроено)
+
+**Важно**: Никогда не коммитьте `Config.xcconfig` с реальным ключом в Git!
+
 ## Шаг 1.5 — Менеджер зависимостей (Swift Package Manager)
 
 ### Что делаем
