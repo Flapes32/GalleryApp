@@ -67,3 +67,8 @@ fastlane/test_output.DS_Store
 
 # Configuration files with sensitive data
 Config.xcconfig
+
+# Temporary files and scripts
+Packages/MyLibrary/
+Plan.md
+install.sh
