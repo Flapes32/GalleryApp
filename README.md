@@ -58,37 +58,156 @@ SPM встроен в Xcode, не требует отдельной устано
 
 ---
 
-## Фаза 2: Модульная архитектура и сетевой слой ✅
+## Фаза 2: Создание модулей и сетевого слоя
 
-### Созданные модули
+### Шаг 2.1: Создание модуля Core
 
-#### ✅ Core Module
-Базовые утилиты и расширения для UI:
-- `UIView+Extensions` - удобное добавление нескольких subviews
-- `UIImageView+Extensions` - заготовка для загрузки изображений (будет использован Kingfisher)
-- `Config` - безопасный доступ к конфигурации приложения (API ключи)
+**Что делаем**: Создаем первый Swift Package для базовых утилит и расширений.
 
-**Зависимости**: нет
+**Подробные действия**:
 
-#### ✅ Models Module
-Модели данных для Unsplash API:
-- `UnsplashPhoto` - основная модель фотографии с Codable
-- `PhotoURLs` - структура URL для разных размеров изображений
-- `User` - информация об авторе фотографии
+1. **Создание пакета через Xcode**:
+   - File → New → Package
+   - Шаблон: Library
+   - Название: `Core`
+   - Место сохранения: папка `Packages/`
 
-**Зависимости**: нет
+2. **Настройка Package.swift**:
+   - Платформа: iOS 15+
+   - Swift version: 5.9
+   - Настроены products и targets
 
-#### ✅ NetworkLayer Module
-Сетевой слой для работы с API:
-- `NetworkService` - протокол для абстракции сетевых запросов
-- `URLSessionNetworkService` - реализация на базе URLSession
-- `Endpoint` - структура для построения API запросов
-- `NetworkError` - enum с типами ошибок
-- `UnsplashService` - специализированный сервис для Unsplash API
+3. **Создание базовых расширений**:
+   - `UIView+Extensions.swift` - метод `addSubviews(_:)` для удобного добавления нескольких subviews
+   - `UIImageView+Extensions.swift` - заготовка метода `setImage(from:placeholder:)` для загрузки изображений (позже будет использован Kingfisher)
 
-**Зависимости**: Models, Core
+4. **Подключение модуля к проекту**:
+   - Модуль Core добавлен в Frameworks, Libraries, and Embedded Content
+   - Подключён к target GalleryApp
 
-### Архитектура модулей
+**Результат**: Модуль Core создан и подключен к проекту.
+
+---
+
+### Шаг 2.2: Создание модуля Models
+
+**Что делаем**: Создаем модуль для общих моделей данных.
+
+**Подробные действия**:
+
+1. **Создание пакета Models**:
+   - File → New → Package
+   - Название: `Models`
+   - Сохранён в `Packages/`
+
+2. **Создание модели UnsplashPhoto**:
+   - `UnsplashPhoto.swift` - основная модель фотографии
+   - `PhotoURLs` - структура URL для разных размеров изображений (raw, full, regular, small, thumb)
+   - `User` - информация об авторе фотографии
+   - Все модели реализуют `Codable` для JSON декодирования
+   - Используется `CodingKeys` для маппинга snake_case JSON полей
+
+3. **Подключение Models к проекту**:
+   - Модуль Models добавлен в Frameworks
+   - Подключён к target GalleryApp
+
+**Результат**: Модуль Models создан с моделями для Unsplash API.
+
+---
+
+### Шаг 2.3: Регистрация в Unsplash API
+
+**Что делаем**: Получаем API ключ для доступа к Unsplash.
+
+**Подробные действия**:
+
+1. **Регистрация на Unsplash**:
+   - Переход на https://unsplash.com/developers
+   - Регистрация как разработчик
+   - Создание приложения "iOS Gallery Test App"
+
+2. **Создание Config файла**:
+   - Создан `Config.xcconfig.example` как шаблон
+   - Создан `Config.xcconfig` с реальным ключом (в .gitignore)
+   - Добавлен `Config.swift` в модуль Core для доступа к ключу
+
+3. **Обновление Info.plist**:
+   - Добавлен ключ `UNSPLASH_ACCESS_KEY` со значением `$(UNSPLASH_ACCESS_KEY)`
+   - Подключён `Config.xcconfig` к проекту через baseConfigurationReference
+
+4. **Обновление README**:
+   - Добавлены инструкции по настройке Unsplash API
+
+**Результат**: Конфигурация Unsplash API настроена и защищена.
+
+---
+
+### Шаг 2.4: Создание модуля NetworkLayer
+
+**Что делаем**: Создаем модуль для работы с сетью на базе URLSession.
+
+**Подробные действия**:
+
+1. **Создание пакета NetworkLayer**:
+   - File → New → Package → Library
+   - Название: `NetworkLayer`
+   - Сохранён в `Packages/`
+
+2. **Настройка зависимостей в Package.swift**:
+   - Добавлены зависимости от `Models` и `Core`
+   - Платформа: iOS 15+
+
+3. **Создание протокола NetworkService**:
+   - `NetworkService.swift` - протокол с методом `request<T: Decodable>(_ endpoint: Endpoint)`
+   - `NetworkError` - enum с типами ошибок (invalidURL, noData, decodingError, serverError, unknown)
+
+4. **Создание Endpoint**:
+   - `Endpoint.swift` - структура для построения URL запросов
+   - Автоматическое формирование URL для `api.unsplash.com`
+
+5. **Реализация URLSessionNetworkService**:
+   - `URLSessionNetworkService.swift` - реализация NetworkService
+   - Автоматическая подстановка Authorization заголовка (Client-ID)
+   - JSON декодирование с `.convertFromSnakeCase` стратегией
+   - Обработка HTTP статус кодов
+
+6. **Подключение NetworkLayer к проекту**:
+   - Модуль добавлен в Frameworks
+   - Подключён к target GalleryApp
+
+**Результат**: Базовый сетевой слой создан и готов к использованию.
+
+---
+
+### Шаг 2.5: Создание UnsplashService
+
+**Что делаем**: Создаем специализированный сервис для работы с Unsplash API.
+
+**Подробные действия**:
+
+1. **Создание протокола UnsplashServiceProtocol**:
+   - `UnsplashService.swift` - протокол с методом `fetchPhotos(page:perPage:)`
+   - Реализация `UnsplashService`, использующая `NetworkService`
+   - Построение `Endpoint` с query параметрами для пагинации
+
+2. **Создание Mock для тестов**:
+   - `MockNetworkService.swift` - mock-объект для изоляции тестов
+   - Поддержка симуляции ошибок через `shouldThrowError`
+   - Возврат заранее подготовленных данных через `mockData`
+
+3. **Написание Unit-теста**:
+   - `UnsplashServiceTests.swift` - тесты для UnsplashService
+   - Тест успешного сценария `testFetchPhotos_Success`
+   - Использование паттерна Given-When-Then
+
+4. **Обновление зависимостей**:
+   - Models добавлен в testTarget для использования в тестах
+
+**Результат**: Сетевой слой полностью готов к использованию с полным покрытием тестами.
+
+---
+
+## Архитектура проекта
 
 ```
 GalleryApp
@@ -105,29 +224,16 @@ GalleryApp
       └── UnsplashService (специализированный сервис)
 ```
 
-### Тестирование
+## Тестирование
 
-#### Unit-тесты
-- `UnsplashServiceTests` - тесты для UnsplashService
-- `MockNetworkService` - mock-объект для изоляции тестов
-- Все тесты проходят успешно ✅
+### Unit-тесты и Mock-объекты
 
-#### Как работают тесты
-- **Mock** - это объект-заглушка, который имитирует реальный NetworkService
-- **Unit-тесты** - проверяют код (UnsplashService), который работает с mock-объектом
-- Тесты изолированы от реальных сетевых запросов
+**Как это работает**:
+- **Mock** - это объект-заглушка (`MockNetworkService`), который имитирует реальный `NetworkService`
+- **Unit-тесты** - проверяют код (`UnsplashService`), который работает с mock-объектом
+- Тесты изолированы от реальных сетевых запросов - быстро и надёжно
 
-### Технические детали
-
-- **Платформа**: iOS 15+
-- **Swift**: 5.9+
-- **Архитектура**: MVVM + Clean Architecture
-- **Модульность**: Swift Package Manager (SPM)
-- **Сетевые запросы**: Async/await
-- **Декодирование**: Codable с поддержкой snake_case
-
-### Использование
-
+**Пример использования**:
 ```swift
 import NetworkLayer
 import Core
@@ -141,7 +247,7 @@ let unsplashService = UnsplashService(networkService: networkService)
 let photos = try await unsplashService.fetchPhotos(page: 1, perPage: 30)
 ```
 
-### Статус проекта
+## Статус проекта
 
 - ✅ Все модули компилируются без ошибок
 - ✅ SwiftLint проходит без нарушений
@@ -150,7 +256,7 @@ let photos = try await unsplashService.fetchPhotos(page: 1, perPage: 30)
 - ✅ Модули подключены к основному проекту
 - ✅ Тесты запускаются на симуляторе
 
-### Следующие шаги
+## Следующие шаги
 
 - [ ] Создание DataLayer модуля
 - [ ] Создание GalleryFeature модуля
