@@ -41,7 +41,7 @@
 		180FDECA2EC28D60004CC694 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		180FDECE2EC28D72004CC694 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		180FDED32EC28D88004CC694 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		180FDED62EC28D89004CC694 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
+		180FDED62EC28D89004CC694 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		18201B642EC3296E00EAEE72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18201B662EC3297000EAEE72 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		18822C8A2EC1E87E006C6642 /* GalleryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GalleryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,9 +113,16 @@
 			isa = PBXGroup;
 			children = (
 				180FDED32EC28D88004CC694 /* LaunchScreen.storyboard */,
-				180FDED62EC28D89004CC694 /* Main.storyboard */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		180FDED82EC28D8A004CC694 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				180FDED62EC28D89004CC694 /* Main.storyboard */,
+			);
+			path = Base.lproj;
 			sourceTree = "<group>";
 		};
 		180FDED62EC28DCF004CC694 /* Packages */ = {
@@ -137,6 +144,7 @@
 			children = (
 				180FDED62EC28DCF004CC694 /* Packages */,
 				180FDED42EC28D88004CC694 /* SupportingFiles */,
+				180FDED82EC28D8A004CC694 /* Base.lproj */,
 				180FDED02EC28D72004CC694 /* Resources */,
 				180FDECB2EC28D60004CC694 /* App */,
 				180FDE9B2EC1ED69004CC694 /* ViewController.swift */,
