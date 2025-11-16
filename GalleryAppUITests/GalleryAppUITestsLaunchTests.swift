@@ -22,11 +22,10 @@ final class GalleryAppUITestsLaunchTests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
-        // Wait for the app to be ready
-        let exists = NSPredicate(format: "exists == true")
-        let window = app.windows.firstMatch
-        expectation(for: exists, evaluatedWith: window, handler: nil)
-        waitForExpectations(timeout: 5.0, handler: nil)
+        // Wait for the app to be ready - wait for any element to appear
+        // This ensures the UI is loaded before taking a screenshot
+        let firstElement = app.otherElements.firstMatch
+        XCTAssertTrue(firstElement.waitForExistence(timeout: 10.0), "App did not launch in time")
 
         // Insert steps here to perform after app launch but before taking a screenshot,
         // such as logging into a test account or navigating somewhere in the app
