@@ -25,6 +25,11 @@ let package = Package(
             dependencies: ["Models", "Core", "NetworkLayer", "DataLayer", "DetailFeature"]),
         .testTarget(
             name: "GalleryFeatureTests",
-            dependencies: ["GalleryFeature"])
+            dependencies: [
+                "GalleryFeature",
+                "Models",
+                "NetworkLayer",
+                "DataLayer"
+            ])
     ]
 )
