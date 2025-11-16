@@ -51,12 +51,6 @@
 - Kingfisher (кэширование изображений)
 - SwiftLint (code quality)
 
-### SOLID принципы:
-
-См. файл [ARCHITECTURE.md](ARCHITECTURE.md)
-
-## Установка и запуск
-
 ### Требования:
 
 - Xcode 15.0+
