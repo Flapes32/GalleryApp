@@ -6,4 +6,3 @@ public protocol FavoritesRepository {
     func isFavorite(photoId: String) async -> Bool
     func getAllFavorites() async -> Set<String>
 }
-
