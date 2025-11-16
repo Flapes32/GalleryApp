@@ -7,7 +7,10 @@ final class FavoritesUseCaseTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        let testDefaults = UserDefaults(suiteName: "test")!
+        guard let testDefaults = UserDefaults(suiteName: "test") else {
+            XCTFail("Failed to create test UserDefaults")
+            return
+        }
         testDefaults.removePersistentDomain(forName: "test")
         repository = UserDefaultsFavoritesRepository(userDefaults: testDefaults)
         sut = FavoritesUseCase(repository: repository)
