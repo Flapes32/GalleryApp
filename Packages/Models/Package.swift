@@ -1,0 +1,24 @@
+// swift-tools-version: 5.9
+
+import PackageDescription
+
+let package = Package(
+    name: "Models",
+    platforms: [
+        .iOS(.v15)
+    ],
+    products: [
+        .library(
+            name: "Models",
+            targets: ["Models"])
+    ],
+    dependencies: [],
+    targets: [
+        .target(
+            name: "Models",
+            dependencies: []),
+        .testTarget(
+            name: "ModelsTests",
+            dependencies: ["Models"])
+    ]
+)
