@@ -9,7 +9,7 @@ import XCTest
 
 final class GalleryAppUITestsLaunchTests: XCTestCase {
 
-    override class var runsForEachTargetApplicationUIConfiguration: Bool {
+    override static var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }
 
@@ -22,10 +22,15 @@ final class GalleryAppUITestsLaunchTests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
-        // Insert steps here to perform after app launch but before taking a screenshot,
-        // such as logging into a test account or navigating somewhere in the app
+        // Give the app a moment to fully launch
+        // If the app crashes due to missing storyboard, this test will fail
+        // but won't timeout waiting for UI elements that never appear
+        Thread.sleep(forTimeInterval: 2.0)
 
-        let attachment = XCTAttachment(screenshot: app.screenshot())
+        // Try to take a screenshot - if app is running, this will work
+        // If app crashed, this will also fail gracefully
+        let screenshot = app.screenshot()
+        let attachment = XCTAttachment(screenshot: screenshot)
         attachment.name = "Launch Screen"
         attachment.lifetime = .keepAlways
         add(attachment)
