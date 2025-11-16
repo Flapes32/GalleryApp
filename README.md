@@ -54,3 +54,105 @@ SPM встроен в Xcode, не требует отдельной устано
 1. **Создание папки для локальных пакетов**
    ```bash
    mkdir Packages
+   ```
+
+---
+
+## Фаза 2: Модульная архитектура и сетевой слой ✅
+
+### Созданные модули
+
+#### ✅ Core Module
+Базовые утилиты и расширения для UI:
+- `UIView+Extensions` - удобное добавление нескольких subviews
+- `UIImageView+Extensions` - заготовка для загрузки изображений (будет использован Kingfisher)
+- `Config` - безопасный доступ к конфигурации приложения (API ключи)
+
+**Зависимости**: нет
+
+#### ✅ Models Module
+Модели данных для Unsplash API:
+- `UnsplashPhoto` - основная модель фотографии с Codable
+- `PhotoURLs` - структура URL для разных размеров изображений
+- `User` - информация об авторе фотографии
+
+**Зависимости**: нет
+
+#### ✅ NetworkLayer Module
+Сетевой слой для работы с API:
+- `NetworkService` - протокол для абстракции сетевых запросов
+- `URLSessionNetworkService` - реализация на базе URLSession
+- `Endpoint` - структура для построения API запросов
+- `NetworkError` - enum с типами ошибок
+- `UnsplashService` - специализированный сервис для Unsplash API
+
+**Зависимости**: Models, Core
+
+### Архитектура модулей
+
+```
+GalleryApp
+  ├── Core (базовые утилиты)
+  │   ├── UIView+Extensions
+  │   ├── UIImageView+Extensions
+  │   └── Config
+  ├── Models (модели данных)
+  │   └── UnsplashPhoto, PhotoURLs, User
+  └── NetworkLayer (сетевой слой)
+      ├── NetworkService (протокол)
+      ├── URLSessionNetworkService (реализация)
+      ├── Endpoint (построение запросов)
+      └── UnsplashService (специализированный сервис)
+```
+
+### Тестирование
+
+#### Unit-тесты
+- `UnsplashServiceTests` - тесты для UnsplashService
+- `MockNetworkService` - mock-объект для изоляции тестов
+- Все тесты проходят успешно ✅
+
+#### Как работают тесты
+- **Mock** - это объект-заглушка, который имитирует реальный NetworkService
+- **Unit-тесты** - проверяют код (UnsplashService), который работает с mock-объектом
+- Тесты изолированы от реальных сетевых запросов
+
+### Технические детали
+
+- **Платформа**: iOS 15+
+- **Swift**: 5.9+
+- **Архитектура**: MVVM + Clean Architecture
+- **Модульность**: Swift Package Manager (SPM)
+- **Сетевые запросы**: Async/await
+- **Декодирование**: Codable с поддержкой snake_case
+
+### Использование
+
+```swift
+import NetworkLayer
+import Core
+import Models
+
+// Создание сервиса
+let networkService = URLSessionNetworkService(accessKey: Config.unsplashAccessKey)
+let unsplashService = UnsplashService(networkService: networkService)
+
+// Получение фотографий
+let photos = try await unsplashService.fetchPhotos(page: 1, perPage: 30)
+```
+
+### Статус проекта
+
+- ✅ Все модули компилируются без ошибок
+- ✅ SwiftLint проходит без нарушений
+- ✅ Unit-тесты написаны и проходят
+- ✅ Конфигурация API ключа работает корректно
+- ✅ Модули подключены к основному проекту
+- ✅ Тесты запускаются на симуляторе
+
+### Следующие шаги
+
+- [ ] Создание DataLayer модуля
+- [ ] Создание GalleryFeature модуля
+- [ ] Создание DetailFeature модуля
+- [ ] Интеграция всех модулей в единое приложение
