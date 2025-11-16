@@ -8,4 +8,3 @@ public enum ImageCacheConfiguration {
         cache.diskStorage.config.sizeLimit = 200 * 1024 * 1024 // 200 MB
     }
 }
-
