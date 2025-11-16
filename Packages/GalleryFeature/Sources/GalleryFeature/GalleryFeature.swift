@@ -1,2 +1,8 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
+//
+//  GalleryFeature.swift
+//  GalleryFeature
+//
+//  Created by Apple on 16.11.2025.
+//
+
+import Foundation

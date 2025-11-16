@@ -1,24 +1,29 @@
-// swift-tools-version: 6.1
-// The swift-tools-version declares the minimum version of Swift required to build this package.
+// swift-tools-version: 5.9
 
 import PackageDescription
 
 let package = Package(
     name: "GalleryFeature",
+    platforms: [
+        .iOS(.v15)
+    ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "GalleryFeature",
-            targets: ["GalleryFeature"]),
+            targets: ["GalleryFeature"])
+    ],
+    dependencies: [
+        .package(path: "../Models"),
+        .package(path: "../Core"),
+        .package(path: "../NetworkLayer"),
+        .package(path: "../DataLayer")
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "GalleryFeature"),
+            name: "GalleryFeature",
+            dependencies: ["Models", "Core", "NetworkLayer", "DataLayer"]),
         .testTarget(
             name: "GalleryFeatureTests",
-            dependencies: ["GalleryFeature"]
-        ),
+            dependencies: ["GalleryFeature"])
     ]
 )

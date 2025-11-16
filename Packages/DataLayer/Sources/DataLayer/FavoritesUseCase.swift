@@ -30,4 +30,3 @@ public final class FavoritesUseCase: FavoritesUseCaseProtocol {
         return await repository.getAllFavorites()
     }
 }
-

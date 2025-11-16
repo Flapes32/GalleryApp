@@ -30,4 +30,3 @@ public final class UserDefaultsFavoritesRepository: FavoritesRepository {
         return Set(array)
     }
 }
-
