@@ -22,6 +22,7 @@ public final class GalleryCoordinator: GalleryCoordinatorProtocol {
         self.favoritesUseCase = favoritesUseCase
     }
 
+    @MainActor
     public func start() {
         let viewModel = GalleryViewModel(
             unsplashService: unsplashService,
@@ -29,7 +30,7 @@ public final class GalleryCoordinator: GalleryCoordinatorProtocol {
             coordinator: self
         )
         let viewController = GalleryViewController(viewModel: viewModel)
-        navigationController?.pushViewController(viewController, animated: true)
+        navigationController?.setViewControllers([viewController], animated: false)
     }
 
     public func showImageDetail(photo: UnsplashPhoto, allPhotos: [UnsplashPhoto]) {

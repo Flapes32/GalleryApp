@@ -8,3 +8,4 @@ public enum Config {
         return key
     }
 }
+
