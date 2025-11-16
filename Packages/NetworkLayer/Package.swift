@@ -22,6 +22,6 @@ let package = Package(
             dependencies: ["Models", "Core"]),
         .testTarget(
             name: "NetworkLayerTests",
-            dependencies: ["NetworkLayer"])
+            dependencies: ["NetworkLayer", "Models"])
     ]
 )
