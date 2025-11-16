@@ -105,7 +105,6 @@
 		180FDED42EC28D88004CC694 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				180FDED82EC28DCF004CC694 /* Base.lproj */,
 				180FDED32EC28D88004CC694 /* LaunchScreen.storyboard */,
 			);
 			path = SupportingFiles;
@@ -130,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				180FDED62EC28DCF004CC694 /* Packages */,
+				180FDED82EC28DCF004CC694 /* Base.lproj */,
 				180FDED42EC28D88004CC694 /* SupportingFiles */,
 				180FDED02EC28D72004CC694 /* Resources */,
 				180FDECB2EC28D60004CC694 /* App */,
