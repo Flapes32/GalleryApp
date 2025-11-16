@@ -2,6 +2,7 @@ import UIKit
 import Models
 import NetworkLayer
 import DataLayer
+import DetailFeature
 
 public protocol GalleryCoordinatorProtocol: AnyObject {
     func showImageDetail(photo: UnsplashPhoto, allPhotos: [UnsplashPhoto])
@@ -33,7 +34,15 @@ public final class GalleryCoordinator: GalleryCoordinatorProtocol {
         navigationController?.setViewControllers([viewController], animated: false)
     }
 
+    @MainActor
     public func showImageDetail(photo: UnsplashPhoto, allPhotos: [UnsplashPhoto]) {
-        // Будет реализовано позже
+        let viewModel = DetailViewModel(
+            photo: photo,
+            allPhotos: allPhotos,
+            favoritesUseCase: favoritesUseCase
+        )
+        let viewController = DetailViewController(viewModel: viewModel)
+
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

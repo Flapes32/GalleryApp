@@ -185,6 +185,7 @@
 				18F14F7F2ECA69F500D10202 /* DataLayer */,
 				18F14F802ECA69F600D10202 /* GalleryFeature */,
 				18F14F812ECA69F700D10202 /* Kingfisher */,
+				18F14F842ECA69FA00D10202 /* DetailFeature */,
 			);
 			productName = GalleryApp;
 			productReference = 18822C8A2EC1E87E006C6642 /* GalleryApp.app */;
@@ -275,6 +276,7 @@
 				18F14F792ECA69EF00D10202 /* XCLocalSwiftPackageReference "Packages/NetworkLayer" */,
 				18F14F7A2ECA69F000D10202 /* XCLocalSwiftPackageReference "Packages/DataLayer" */,
 				18F14F7B2ECA69F100D10202 /* XCLocalSwiftPackageReference "Packages/GalleryFeature" */,
+				18F14F832ECA69F900D10202 /* XCLocalSwiftPackageReference "Packages/DetailFeature" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 18822C8B2EC1E87E006C6642 /* Products */;
@@ -671,6 +673,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/GalleryFeature;
 		};
+		18F14F832ECA69F900D10202 /* XCLocalSwiftPackageReference "Packages/DetailFeature" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/DetailFeature;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -714,6 +720,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 18F14F762ECA68AE00D10202 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		18F14F842ECA69FA00D10202 /* DetailFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18F14F832ECA69F900D10202 /* XCLocalSwiftPackageReference "Packages/DetailFeature" */;
+			productName = DetailFeature;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
