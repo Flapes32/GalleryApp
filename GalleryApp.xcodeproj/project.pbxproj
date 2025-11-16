@@ -43,7 +43,6 @@
 		18822C8A2EC1E87E006C6642 /* GalleryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GalleryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18822CA02EC1E87F006C6642 /* GalleryAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GalleryAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18822CAA2EC1E87F006C6642 /* GalleryAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GalleryAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		18F14EFD2ECA4B9600D10202 /* DataLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DataLayer; path = Packages/DataLayer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -157,7 +156,6 @@
 		18F14EFC2ECA4B9600D10202 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				18F14EFD2ECA4B9600D10202 /* DataLayer */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
