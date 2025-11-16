@@ -61,6 +61,13 @@ public final class GalleryViewModel: ObservableObject {
         return favoriteIds.contains(photoId)
     }
 
+    public func refreshPhotos() async {
+        currentPage = 1
+        photos = []
+        canLoadMore = true
+        await loadPhotos()
+    }
+
     public func didSelectPhoto(_ photo: UnsplashPhoto) {
         coordinator?.showImageDetail(photo: photo, allPhotos: photos)
     }

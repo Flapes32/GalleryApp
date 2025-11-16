@@ -22,6 +22,23 @@ public final class GalleryViewController: UIViewController {
         return indicator
     }()
 
+    private lazy var refreshControl: UIRefreshControl = {
+        let rc = UIRefreshControl()
+        rc.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        return rc
+    }()
+
+    private let emptyStateLabel: UILabel = {
+        let label = UILabel()
+        label.text = "No photos yet.\nPull to refresh!"
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.textColor = .secondaryLabel
+        label.isHidden = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
     public init(viewModel: GalleryViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -45,8 +62,11 @@ public final class GalleryViewController: UIViewController {
         title = "Gallery"
         view.backgroundColor = .systemBackground
 
+        collectionView.refreshControl = refreshControl
+
         view.addSubview(collectionView)
         view.addSubview(activityIndicator)
+        view.addSubview(emptyStateLabel)
 
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -55,7 +75,12 @@ public final class GalleryViewController: UIViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
             activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+
+            emptyStateLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            emptyStateLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            emptyStateLabel.leadingAnchor.constraint(greaterThanOrEqualTo: view.leadingAnchor, constant: 32),
+            emptyStateLabel.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -32)
         ])
     }
 
@@ -81,8 +106,9 @@ public final class GalleryViewController: UIViewController {
     private func bindViewModel() {
         viewModel.$photos
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
+            .sink { [weak self] photos in
                 self?.collectionView.reloadData()
+                self?.emptyStateLabel.isHidden = !photos.isEmpty
             }
             .store(in: &cancellables)
 
@@ -104,6 +130,13 @@ public final class GalleryViewController: UIViewController {
                 self?.showError(message)
             }
             .store(in: &cancellables)
+    }
+
+    @objc private func refreshData() {
+        Task {
+            await viewModel.refreshPhotos()
+            refreshControl.endRefreshing()
+        }
     }
 
     private func showError(_ message: String) {
