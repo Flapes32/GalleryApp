@@ -15,7 +15,8 @@ final class GalleryAppUITests: XCTestCase {
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
 
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        // In UI tests it's important to set the initial state - such as interface orientation -
+        // required for your tests before they run. The setUp method is a good place to do this.
     }
 
     override func tearDownWithError() throws {
@@ -34,8 +35,15 @@ final class GalleryAppUITests: XCTestCase {
     @MainActor
     func testLaunchPerformance() throws {
         // This measures how long it takes to launch your application.
+        // Note: If the app crashes during launch (e.g., due to missing API key),
+        // this test may fail. Ensure Config.xcconfig is properly configured.
         measure(metrics: [XCTApplicationLaunchMetric()]) {
-            XCUIApplication().launch()
+            let app = XCUIApplication()
+            app.launch()
+
+            // Wait a moment for app to initialize
+            // This helps ensure accurate measurement
+            Thread.sleep(forTimeInterval: 0.5)
         }
     }
 }
