@@ -45,7 +45,8 @@ public final class GalleryViewController: UIViewController {
         title = "Gallery"
         view.backgroundColor = .systemBackground
 
-        view.addSubviews(collectionView, activityIndicator)
+        view.addSubview(collectionView)
+        view.addSubview(activityIndicator)
 
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),

@@ -179,9 +179,12 @@
 			);
 			name = GalleryApp;
 			packageProductDependencies = (
-				184F01E82EC7220100C48357 /* Core */,
-				18A12F222EC5FA4E00B2EB10 /* Models */,
-				18A12F252EC5FA4F00B2EB10 /* NetworkLayer */,
+				18F14F7C2ECA69F200D10202 /* Core */,
+				18F14F7D2ECA69F300D10202 /* Models */,
+				18F14F7E2ECA69F400D10202 /* NetworkLayer */,
+				18F14F7F2ECA69F500D10202 /* DataLayer */,
+				18F14F802ECA69F600D10202 /* GalleryFeature */,
+				18F14F812ECA69F700D10202 /* Kingfisher */,
 			);
 			productName = GalleryApp;
 			productReference = 18822C8A2EC1E87E006C6642 /* GalleryApp.app */;
@@ -268,6 +271,10 @@
 			packageReferences = (
 				18F14F762ECA68AE00D10202 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				18F14F772ECA69DD00D10202 /* XCLocalSwiftPackageReference "Packages/Core" */,
+				18F14F782ECA69EE00D10202 /* XCLocalSwiftPackageReference "Packages/Models" */,
+				18F14F792ECA69EF00D10202 /* XCLocalSwiftPackageReference "Packages/NetworkLayer" */,
+				18F14F7A2ECA69F000D10202 /* XCLocalSwiftPackageReference "Packages/DataLayer" */,
+				18F14F7B2ECA69F100D10202 /* XCLocalSwiftPackageReference "Packages/GalleryFeature" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 18822C8B2EC1E87E006C6642 /* Products */;
@@ -362,7 +369,6 @@
 				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
@@ -392,7 +398,6 @@
 				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
@@ -650,6 +655,22 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/Core;
 		};
+		18F14F782ECA69EE00D10202 /* XCLocalSwiftPackageReference "Packages/Models" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/Models;
+		};
+		18F14F792ECA69EF00D10202 /* XCLocalSwiftPackageReference "Packages/NetworkLayer" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/NetworkLayer;
+		};
+		18F14F7A2ECA69F000D10202 /* XCLocalSwiftPackageReference "Packages/DataLayer" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/DataLayer;
+		};
+		18F14F7B2ECA69F100D10202 /* XCLocalSwiftPackageReference "Packages/GalleryFeature" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/GalleryFeature;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -662,6 +683,39 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		18F14F7C2ECA69F200D10202 /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18F14F772ECA69DD00D10202 /* XCLocalSwiftPackageReference "Packages/Core" */;
+			productName = Core;
+		};
+		18F14F7D2ECA69F300D10202 /* Models */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18F14F782ECA69EE00D10202 /* XCLocalSwiftPackageReference "Packages/Models" */;
+			productName = Models;
+		};
+		18F14F7E2ECA69F400D10202 /* NetworkLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18F14F792ECA69EF00D10202 /* XCLocalSwiftPackageReference "Packages/NetworkLayer" */;
+			productName = NetworkLayer;
+		};
+		18F14F7F2ECA69F500D10202 /* DataLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18F14F7A2ECA69F000D10202 /* XCLocalSwiftPackageReference "Packages/DataLayer" */;
+			productName = DataLayer;
+		};
+		18F14F802ECA69F600D10202 /* GalleryFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18F14F7B2ECA69F100D10202 /* XCLocalSwiftPackageReference "Packages/GalleryFeature" */;
+			productName = GalleryFeature;
+		};
+		18F14F812ECA69F700D10202 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18F14F762ECA68AE00D10202 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 18822C822EC1E87E006C6642 /* Project object */;
 }

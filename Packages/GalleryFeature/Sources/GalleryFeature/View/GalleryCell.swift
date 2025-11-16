@@ -32,7 +32,8 @@ final class GalleryCell: UICollectionViewCell {
     }
 
     private func setupUI() {
-        contentView.addSubviews(imageView, favoriteIcon)
+        contentView.addSubview(imageView)
+        contentView.addSubview(favoriteIcon)
 
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
