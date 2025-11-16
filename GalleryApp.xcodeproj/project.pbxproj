@@ -14,6 +14,7 @@
 		180FDED52EC28D88004CC694 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180FDED32EC28D88004CC694 /* LaunchScreen.storyboard */; };
 		184F01E92EC7220100C48357 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 184F01E82EC7220100C48357 /* Core */; };
 		18A12F232EC5FA4E00B2EB10 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 18A12F222EC5FA4E00B2EB10 /* Models */; };
+		18A12F242EC5FA4F00B2EB10 /* NetworkLayer in Frameworks */ = {isa = PBXBuildFile; productRef = 18A12F252EC5FA4F00B2EB10 /* NetworkLayer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 			files = (
 				184F01E92EC7220100C48357 /* Core in Frameworks */,
 				18A12F232EC5FA4E00B2EB10 /* Models in Frameworks */,
+				18A12F242EC5FA4F00B2EB10 /* NetworkLayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +173,7 @@
 			packageProductDependencies = (
 				184F01E82EC7220100C48357 /* Core */,
 				18A12F222EC5FA4E00B2EB10 /* Models */,
+				18A12F252EC5FA4F00B2EB10 /* NetworkLayer */,
 			);
 			productName = GalleryApp;
 			productReference = 18822C8A2EC1E87E006C6642 /* GalleryApp.app */;
@@ -673,6 +676,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1865B4A42EC48913007E18CC /* XCLocalSwiftPackageReference "Packages/Models" */;
 			productName = Models;
+		};
+		18A12F252EC5FA4F00B2EB10 /* NetworkLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1865B4A62EC48A02007E18CC /* XCLocalSwiftPackageReference "Packages/NetworkLayer" */;
+			productName = NetworkLayer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
