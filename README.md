@@ -1,56 +1,150 @@
-# GalleryApp
-## Project Setup
+# iOS Gallery App
 
-### 1.1 — Инициализация проекта
-- Создан новый Xcode‑проект **GalleryApp**.
-- Базовая структура включает `AppDelegate.swift`, `SceneDelegate.swift` и стартовый `ViewController.swift`.
-- Добавлен `.gitignore` для исключения временных файлов и артефактов сборки.
+Приложение-галерея для просмотра изображений из Unsplash API с возможностью сохранения избранного.
 
-### 1.2 — Настройка Git
-- Репозиторий инициализирован локально.
-- Подключён удалённый origin на GitHub.
-- Принята схема ветвления:
-  - `main` — стабильные релизы.
-  - `develop` — основная ветка разработки.
-  - `feature/*` — отдельные ветки для задач.
+## Контакты
 
-### 1.3 — Настройка SwiftLint
-- Установлен SwiftLint через Homebrew:
-  ```bash
-  brew install swiftlint
+- **Имя**: Дэннис Браун
+- **Email**: brown_denny@icloud.com
+- **GitHub**: https://github.com/Flapes32/GalleryApp
 
-## Development Setup
+## О проекте
 
-### 1.4 Pre-commit Hook (SwiftLint)
+Тестовое задание для позиции iOS разработчика. Приложение демонстрирует:
 
-В проекте настроен Git pre-commit hook, который запускает **SwiftLint** перед каждым коммитом.  
-- Если есть ошибки уровня *error* — коммит блокируется.  
-- Если только *warnings* — коммит проходит, но выводятся предупреждения.  
+- Работу с Unsplash API
+- MVVM + Clean Architecture
+- Модульную структуру на Swift Package Manager
+- Локальное сохранение данных
+- UIKit и программное создание UI
 
-Хук находится в `.git/hooks/pre-commit` и автоматически проверяет все закоммиченные `.swift` файлы.  
-Это гарантирует единый стиль кода и чистую историю в репозитории.
+## Основные функции
 
-## Configuration
+- Просмотр фотографий из Unsplash в виде сетки
+- Бесконечная пагинация (30 фото на запрос)
+- Добавление фото в избранное
+- Детальный просмотр с zoom
+- Swipe-жесты для навигации между фото
+- Кэширование изображений
+- Pull-to-refresh
 
-### Unsplash API Setup
+## Архитектура
 
-Для работы приложения необходим API ключ от Unsplash:
+### Паттерн: MVVM + Clean Architecture + Coordinator
 
-1. Зарегистрируйтесь на https://unsplash.com/developers
-2. Создайте приложение и получите Access Key
-3. Скопируйте `Config.xcconfig.example` в `Config.xcconfig` (в папке `Resources/`)
-4. Замените `your_access_key_here` на ваш реальный ключ
-5. Убедитесь, что `Config.xcconfig` добавлен в `.gitignore` (уже настроено)
+### Модули (Swift Package Manager):
 
-**Важно**: Никогда не коммитьте `Config.xcconfig` с реальным ключом в Git!
+- **Core** — базовые утилиты и расширения
+- **Models** — модели данных
+- **NetworkLayer** — сетевой слой (URLSession)
+- **DataLayer** — локальное хранилище (UserDefaults)
+- **GalleryFeature** — экран галереи
+- **DetailFeature** — экран деталей
 
-## Шаг 1.5 — Менеджер зависимостей (Swift Package Manager)
+### Используемые технологии:
 
-### Что делаем
-Настраиваем **Swift Package Manager (SPM)** для управления модулями и внешними библиотеками.  
-SPM встроен в Xcode, не требует отдельной установки (в отличие от CocoaPods) и используется для подключения библиотек и создания модулей.
+- Swift 5.9+
+- UIKit
+- URLSession (async/await)
+- Combine
+- Swift Package Manager
+- Kingfisher (кэширование изображений)
+- SwiftLint (code quality)
 
-### Подробные действия
-1. **Создание папки для локальных пакетов**
-   ```bash
-   mkdir Packages
+### SOLID принципы:
+
+См. файл [ARCHITECTURE.md](ARCHITECTURE.md)
+
+## Установка и запуск
+
+### Требования:
+
+- Xcode 15.0+
+- iOS 15.0+
+- Swift 5.9+
+
+### Инструкция:
+
+1. Клонируйте репозиторий:
+
+   ```
+   git clone git@github.com:Flapes32/GalleryApp.git
+   cd GalleryApp
+   ```
+
+2. Получите Unsplash API ключ:
+
+   - Зарегистрируйтесь на https://unsplash.com/developers
+   - Создайте приложение
+   - Скопируйте Access Key
+
+3. Настройте Config файл:
+
+   ```
+   cp Resources/Config.xcconfig.example Resources/Config.xcconfig
+   ```
+
+   Откройте `Resources/Config.xcconfig` и вставьте ваш API ключ:
+
+   ```
+   UNSPLASH_ACCESS_KEY = your_access_key_here
+   ```
+
+4. Откройте проект в Xcode:
+
+   ```
+   open GalleryApp.xcodeproj
+   ```
+
+5. Запустите проект (⌘R)
+
+## Скриншоты
+
+[Здесь будут скриншоты]
+
+## Демо
+
+[Ссылка на видео]
+
+## Тестирование
+
+Запуск тестов:
+
+```
+xcodebuild test -scheme GalleryApp -destination 'platform=iOS Simulator,name=iPhone 15'
+```
+
+Или в Xcode: Product → Test (⌘U)
+
+## Git Workflow
+
+Проект использует Git Flow:
+
+- `main` — стабильная версия
+- `develop` — основная ветка разработки
+- `feature/*` — ветки для отдельных задач
+
+### Conventional Commits:
+
+- `[ADDED]` — новая функциональность
+- `[FIXED]` — исправление бага
+- `[REFACTORED]` — рефакторинг кода
+- `[UPDATED]` — обновление существующей функции
+- `[DOCS]` — обновление документации
+
+## Дополнительные фичи
+
+- Pull-to-refresh для обновления списка
+- Empty state при отсутствии фотографий
+- Zoom для детального просмотра
+- Индикаторы загрузки
+- Обработка ошибок сети
+
+## Лицензия
+
+MIT License
+
+## Благодарности
+
+- [Unsplash](https://unsplash.com) за бесплатный API
+- [Kingfisher](https://github.com/onevcat/Kingfisher) за кэширование изображений
