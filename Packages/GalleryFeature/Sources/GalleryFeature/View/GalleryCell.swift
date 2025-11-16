@@ -58,4 +58,3 @@ final class GalleryCell: UICollectionViewCell {
         favoriteIcon.isHidden = true
     }
 }
-
