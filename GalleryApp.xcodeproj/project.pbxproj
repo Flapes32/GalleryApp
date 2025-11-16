@@ -12,9 +12,7 @@
 		180FDECD2EC28D60004CC694 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180FDEC92EC28D60004CC694 /* AppDelegate.swift */; };
 		180FDED12EC28D72004CC694 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180FDECE2EC28D72004CC694 /* Assets.xcassets */; };
 		180FDED52EC28D88004CC694 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180FDED32EC28D88004CC694 /* LaunchScreen.storyboard */; };
-		184F01E92EC7220100C48357 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 184F01E82EC7220100C48357 /* Core */; };
-		18A12F232EC5FA4E00B2EB10 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 18A12F222EC5FA4E00B2EB10 /* Models */; };
-		18A12F242EC5FA4F00B2EB10 /* NetworkLayer in Frameworks */ = {isa = PBXBuildFile; productRef = 18A12F252EC5FA4F00B2EB10 /* NetworkLayer */; };
+		180FDED72EC28DCF004CC694 /* Packages in Resources */ = {isa = PBXBuildFile; fileRef = 180FDED62EC28DCF004CC694 /* Packages */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +43,7 @@
 		18822C8A2EC1E87E006C6642 /* GalleryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GalleryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18822CA02EC1E87F006C6642 /* GalleryAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GalleryAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18822CAA2EC1E87F006C6642 /* GalleryAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GalleryAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18F14EFD2ECA4B9600D10202 /* DataLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DataLayer; path = Packages/DataLayer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -122,24 +121,25 @@
 			path = Packages;
 			sourceTree = "<group>";
 		};
-		184F01E72EC7220100C48357 /* Frameworks */ = {
+		180FDED82EC28DCF004CC694 /* Base.lproj */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Frameworks;
+			path = Base.lproj;
 			sourceTree = "<group>";
 		};
 		18822C812EC1E87E006C6642 = {
 			isa = PBXGroup;
 			children = (
 				180FDED62EC28DCF004CC694 /* Packages */,
+				180FDED82EC28DCF004CC694 /* Base.lproj */,
 				180FDED42EC28D88004CC694 /* SupportingFiles */,
 				180FDED02EC28D72004CC694 /* Resources */,
 				180FDECB2EC28D60004CC694 /* App */,
 				180FDE9B2EC1ED69004CC694 /* ViewController.swift */,
 				18822CA32EC1E87F006C6642 /* GalleryAppTests */,
 				18822CAD2EC1E87F006C6642 /* GalleryAppUITests */,
-				184F01E72EC7220100C48357 /* Frameworks */,
+				18F14EFC2ECA4B9600D10202 /* Frameworks */,
 				18822C8B2EC1E87E006C6642 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -152,6 +152,14 @@
 				18822CAA2EC1E87F006C6642 /* GalleryAppUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		18F14EFC2ECA4B9600D10202 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18F14EFD2ECA4B9600D10202 /* DataLayer */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,12 +266,8 @@
 			mainGroup = 18822C812EC1E87E006C6642;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				1865B4A02EC488E5007E18CC /* XCLocalSwiftPackageReference "Packages/Core" */,
-				1865B4A12EC488F3007E18CC /* XCLocalSwiftPackageReference "Packages/DataLayer" */,
-				1865B4A22EC488FE007E18CC /* XCLocalSwiftPackageReference "Packages/DetailFeature" */,
-				1865B4A32EC48908007E18CC /* XCLocalSwiftPackageReference "Packages/GalleryFeature" */,
-				1865B4A42EC48913007E18CC /* XCLocalSwiftPackageReference "Packages/Models" */,
-				1865B4A62EC48A02007E18CC /* XCLocalSwiftPackageReference "Packages/NetworkLayer" */,
+				18F14F762ECA68AE00D10202 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				18F14F772ECA69DD00D10202 /* XCLocalSwiftPackageReference "Packages/Core" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 18822C8B2EC1E87E006C6642 /* Products */;
@@ -282,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				180FDED72EC28DCF004CC694 /* Packages in Resources */,
 				180FDED52EC28D88004CC694 /* LaunchScreen.storyboard in Resources */,
 				180FDED12EC28D72004CC694 /* Assets.xcassets in Resources */,
 			);
@@ -457,7 +462,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				"INFOPLIST_FILE[sdk=*]" = "$(SRCROOT)/GalleryApp/Resources/Info.plist\n";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -534,7 +538,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 84WHR6PH48;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = flapes32.GalleryAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -553,7 +557,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 84WHR6PH48;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = flapes32.GalleryAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -571,6 +575,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 84WHR6PH48;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = flapes32.GalleryAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -588,6 +593,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 84WHR6PH48;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = flapes32.GalleryAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -640,49 +646,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		1865B4A02EC488E5007E18CC /* XCLocalSwiftPackageReference "Packages/Core" */ = {
+		18F14F772ECA69DD00D10202 /* XCLocalSwiftPackageReference "Packages/Core" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/Core;
 		};
-		1865B4A12EC488F3007E18CC /* XCLocalSwiftPackageReference "Packages/DataLayer" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Packages/DataLayer;
-		};
-		1865B4A22EC488FE007E18CC /* XCLocalSwiftPackageReference "Packages/DetailFeature" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Packages/DetailFeature;
-		};
-		1865B4A32EC48908007E18CC /* XCLocalSwiftPackageReference "Packages/GalleryFeature" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Packages/GalleryFeature;
-		};
-		1865B4A42EC48913007E18CC /* XCLocalSwiftPackageReference "Packages/Models" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Packages/Models;
-		};
-		1865B4A62EC48A02007E18CC /* XCLocalSwiftPackageReference "Packages/NetworkLayer" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Packages/NetworkLayer;
-		};
 /* End XCLocalSwiftPackageReference section */
 
-/* Begin XCSwiftPackageProductDependency section */
-		184F01E82EC7220100C48357 /* Core */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1865B4A02EC488E5007E18CC /* XCLocalSwiftPackageReference "Packages/Core" */;
-			productName = Core;
+/* Begin XCRemoteSwiftPackageReference section */
+		18F14F762ECA68AE00D10202 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.6.1;
+			};
 		};
-		18A12F222EC5FA4E00B2EB10 /* Models */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1865B4A42EC48913007E18CC /* XCLocalSwiftPackageReference "Packages/Models" */;
-			productName = Models;
-		};
-		18A12F252EC5FA4F00B2EB10 /* NetworkLayer */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1865B4A62EC48A02007E18CC /* XCLocalSwiftPackageReference "Packages/NetworkLayer" */;
-			productName = NetworkLayer;
-		};
-/* End XCSwiftPackageProductDependency section */
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 18822C822EC1E87E006C6642 /* Project object */;
 }

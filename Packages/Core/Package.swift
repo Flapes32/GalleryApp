@@ -12,11 +12,15 @@ let package = Package(
             name: "Core",
             targets: ["Core"])
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/onevcat/Kingfisher.git", from: "7.0.0")
+    ],
     targets: [
         .target(
             name: "Core",
-            dependencies: []),
+            dependencies: [
+                .product(name: "Kingfisher", package: "Kingfisher")
+            ]),
         .testTarget(
             name: "CoreTests",
             dependencies: ["Core"])
