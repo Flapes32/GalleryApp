@@ -65,4 +65,3 @@ public final class GalleryViewModel: ObservableObject {
         coordinator?.showImageDetail(photo: photo, allPhotos: photos)
     }
 }
-

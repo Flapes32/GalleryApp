@@ -22,4 +22,3 @@ public final class GalleryCoordinator: GalleryCoordinatorProtocol {
         // Будет реализовано позже
     }
 }
-
