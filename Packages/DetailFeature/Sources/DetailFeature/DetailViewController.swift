@@ -1,6 +1,7 @@
 import UIKit
 import Core
 import Combine
+import Models
 
 public final class DetailViewController: UIViewController {
     private let viewModel: DetailViewModel
